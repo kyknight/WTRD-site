@@ -1,83 +1,101 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8"/>
+	<title>WTRD</title>
+
+	<meta charset="UTF-8"/>
   <!-- Viewport width set to device width for mobile. -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  	<meta name="viewport" content="width=device-width,initial-scale=1">
+  	<link rel="stylesheet" href="css/style.css">
 
-  <title>WTRD</title>
-  
-  <link rel="stylesheet" href="css/style.css">
+  	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.min.css">
+  	 <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
 
-  <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet prefetch" href="/style/stylesheet.css" text="text/css">
+  	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <script src="https://use.fontawesome.com/49ae77af7a.js"></script>
-  
+  	<link href='https://fonts.googleapis.com/css?family=Antic|Baloo Da|Bungee' rel='stylesheet' text='text/css'>
+
+  				<!-- browser icon -->
+	<link rel="shortcut icon" href="./images/sugarSkull_favicon.png" type="image/x-icon" />
+
 </head>
-
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
 
-          <!-- Navigation begin -->
-    
-<nav id="nav" role="navigation"> 
-    <a href="#nav" title="Show navigation">Show navigation</a> <a href="#" title="Hide navigation">Hide navigation</a>
-      <ul><img class="image-responsive" src="./images/RollerDollz-Logo-2017_on-black1.png" alt="WTRD awesome's logo!" title="WTRD's awesome logo!" height=90px width=90px margin-right=30px />
-        <li><a href="#top">About</a></li>
-        <li> <a href="#practices">Practices</a></li>
-        <li><a href="#calendar">Schedule</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
-</nav>
-    <!-- navigation end -->
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <a class="navbar-brand" href="#"><img class="navLogo" src="http://i.imgur.com/P1q1lpy.png" title="source: imgur.com" /> West Texas Roller Derby</a>
+	  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+	    <div class="navbar-nav">
+	      <a class="nav-item nav-link" href="#top">About</a>
+	      <a class="nav-item nav-link" href="#practice">Practices</a>
+	      <a class="nav-item nav-link" href="#schedule">Schedule</a>
+	      <a class="nav-item nav-link" href="#contact">Contact</a>
+	    </div>
+	  </div>
+	</nav>
 
-    <div class="mainContent">
-                        <!-- Body Begins -->
-        <section class="bodyContent" id="top">
-             <!-- Humble Statement of how WTRD is more awesome than puppies serving you mimosas in tiny suits... -->
-              <h3>Mission Statement</h3>
+<!-- slideshow of action shots? -->
+			<ul class="slideshow" id="wayUp">
+		      <li></li>
+		      <li></li>
+		      <li></li>
+		      <li></li>
+		      <li></li>
+		    </ul>
+
+	<div class="clear"></div>
+
+    <div class="container">
+    	<div id="top" class="row col col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 no-gutters">
+    		<!-- Humble Statement of how WTRD is more awesome than puppies serving you mimosas in tiny suits... -->
+              <h3>Mission</h3>
                     <p>“...To provide athletic opportunities for women and recreational entertainment for the community while perpetuating the popularity of women’s flat track roller derby and the integrity of the league.”</p>
-              <br/><hr>
+              
 
-              <h3>About WTRD</h3>
-                    <p>The West Texas Roller Derby league began in 2007, known then as the West Texas Roller Dollz. WTRD officially changed their name in 2017. In the same year, WTRD began the process of becoming a non-profit organization.
-                    <br/>
-                    WTRD is a charity and community focused sports organization, which is skater owned and operated. WTRD is comprised of a diverse group of strong-minded, strong-spirited and strongly skilled women who love the sport of flat track roller derby and are determined to see it take a permanent hold in Lubbock. Our vision is to deliver a powerful and positive image to the South Plains Community.</p>
-              <br/><hr>
+              <h3>WTRD</h3>
+                    <p>The West Texas Roller Derby league began in 2007, known then as the West Texas Roller Dollz. WTRD officially changed their name in 2017. In the same year, WTRD began the process of becoming a non-profit organization.</p>
+                    
+                    <p>WTRD is a charity and community focused sports organization, which is skater owned and operated. WTRD is comprised of a diverse group of strong-minded, strong-spirited and strongly skilled women who love the sport of flat track roller derby and are determined to see it take a permanent hold in Lubbock. Our vision is to deliver a powerful and positive image to the South Plains Community.</p>
 
 
                       <!-- Google calander linked to westexasrollerderby@gmail.com -->
               <h3>Schedule</h3>
-                  <div id="calendar">
+                  <div id="schedule" class="row col col-12">
                         <iframe src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23993399&amp;src=westtxrollerderby%40gmail.com&amp;color=%231B887A&amp;ctz=America%2FChicago" style="border:solid 1px #777" width="100%" height="400" frameborder="0" scrolling="no"></iframe>
                   </div>
 
               <article><em>*Schedule is subject to change.</em></article>
                       <!-- Body End -->
-        </section>
-        <aside class="sidebar" id="practices">
-            <!-- Practice location and times. Should also be on the calendar. -->
-            <h4>Practices</h4>
-                  <p>WTRD practices are held at <a href="https://goo.gl/maps/4uStVHJiJtz" target="_blank" title="Fiesta!">The Fiesta Event Center</a> at 1902 E 4th St, Lubbock, TX 79403. Practices are every Tuesday and Thursday from 6:30pm till 9:00pm. New skater (freshmeat) practices are Thursdays from 6:30pm till 7:00pm.</p> 
-            <br/><hr>
+    	</div>
+
+    	<!-- Sidebar -->
+    	<div id="practice" class="row col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 no-gutters">
+    		<!-- Practice location and times. Should also be on the calendar. -->
+            <h4 class="col-sm-12">Practices</h4>
+                  <p>WTRD practices are held at <a href="https://goo.gl/maps/4uStVHJiJtz" target="_blank" title="Fiesta!">The Fiesta Event Center</a> at 1902 E 4th St, Lubbock, TX 79403.</p>
+                  <p>Practices are every Thursday from 6:30pm till 9:00pm.</p>
+                  <p>New skater (freshmeat) practices are Thursdays from 6:30pm till 7:00pm.</p>
 
                     <!-- Active fundraisers -->
-            <h4>Fundraisers</h4>
+            <h4 class="col-sm-12">Fundraisers</h4>
                   <h5><a href="https://www.yankeecandlefundraising.com/store.htm" target="_blank" title="Yankee Candles">Yankee Candles<i class="fa fa-registered" aria-hidden="true"></i></a></h5>
                   <p>WTRD's group # (999965331)</p>
             <br/><hr>
 
                     <!-- Link to sponsorship form  and sponsors.....-->
             
-            <h4>Sponsorship</h4>
+            <h4 class="col-sm-12">Sponsorship</h4>
                   <h5>Current Sponsors</h5>
-                      <ul class="list-unstyled" style="text-indent: 3%;">
-                        <li><a href="https://www.facebook.com/Fiesta-Center-1098655813499575/" target="_blank"><img src="./images/fiestaCenterLogo.jpeg" alt="Fiesta Center Logo" title="Fiesta Center"></a></li><br>
-                        <li><a href="https://pitapitusa.com/" target="_blank"><img src="./images/pitaPitLogo.jpeg" alt="Pita Pit Logo" title="Pita Pit"></a></li><br>
-                        <li>Renesha's honeybuns</li>
+                      <ul class="list-unstyled" style="text-indent: 3%;" align='center'>
+                        <li><a href="https://www.facebook.com/Fiesta-Center-1098655813499575/" target="_blank"><img src="http://i.imgur.com/vbm0GbP.jpg" alt="Fiesta Center Logo" title="Fiesta Center"></a></li><br>
+                        <li><a href="https://pitapitusa.com/" target="_blank"><img src="http://i.imgur.com/GOaP5GM.png" alt="Pita Pit Logo" title="Pita Pit"></a></li><br>
+                        <li>Greencrete Construction, LLC</li>
                       </ul>
 
                     <h5>Do you want to sponsor WTRD and get your company's (or your name) out there? Follow these steps:</h5>
@@ -85,37 +103,36 @@
                         <li>Download the <a href="./2017_Sponsor Packet.pdf" target="_blank" title="Be awesome!">sponsorship form</a> and fill it out.</li>
                         <li>Contact WTRD. Clicking the information link below.</li>
                   </ul>
-        </aside>
-              <div class="clear"></div>
+    	</div>
     </div>
 
-    <footer>
-      <!-- Contact Information -->
-          <div id="contact" align="center">
+    <div class='row col col-12' id="contact"> 
+    		<!-- Contact Information -->    
+	            <div class="col col-12" align="center">
 
                     <!-- facebook, snapchat, instagram, help -->
                 <!-- Facebook -->
                 <a href="https://www.facebook.com/WestTexasRollerDerbyOfficial/" target="_blank"><i class="fa fa-facebook-square fa-3x" aria-hidden="true"></i></a>
                 <!-- Instagram -->
-                <a href="https://www.instagram.com/westtexasrollerdollz/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
-                <!-- Snapchat -->
-                <a href="http://www.snapchat.com/add/WTXRollerDollz" target="_blank"><i class="fa fa-snapchat-square fa-3x" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/westtexasrollerderby/" target="_blank"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
                 <!--Twitter -->
                 <a href="https://twitter.com/wtrd" target="_blank"><i class="fa fa-twitter-square fa-3x" aria-hidden="true"></i></a>
                 <!-- Information request? -->
-                <a href="mailto:kyleigh.knight@hotmail.com"><i class="fa fa-info-circle fa-3x" aria-hidden="true"></i></a>
+                <a href="mailto:westtexasrollerderby@gmail.com"><i class="fa fa-info-circle fa-3x" aria-hidden="true"></i></a>
           </div>
 
-          <div id="credit">
-                <p style="font-size:12px; text-align:right; color:dimgray; padding-right:10px;">This site is coded and maintained by <a href="<my portfolio page>" style="color:dimgray;" target="_blank">PhoeWorks</a>.</p>
+          <div class="col col-12" id="credit">
+                <p>This site is coded and maintained by <a href="https://kyknight.github.io/" target="_blank">PhoeWorks</a>.</p>
           </div>
 
-          <div class="scroll-top"><a class="button scrollable" href="#top"><i class="fa fa-arrow-circle-o-up fa-3x"></i></a>
+          <div class="scroll-top"><a class="button scrollable" href="#wayUp"><i class="fa fa-arrow-circle-o-up fa-3x"></i></a>
           </div>
 
-    </footer>
+    </div>
 
 
 
- </body>
+
+
+</body>
 </html>
