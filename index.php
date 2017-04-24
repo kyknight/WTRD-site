@@ -21,9 +21,11 @@ if ($_POST['submit']){
   if ($error){
     $result='<div class="alert alert-danger" role="alert"><strong>Whoops, there is an error</strong>. Please correct the following: '.$error.'</div>';
   }else{
-    mail('kyleigh.knight@hotmail.com', $_POST['subject'], "Name: ".$_POST['name']."Email: ".$_POST['email']."
+    mail('kyleigh.knight@hotmail.com', $_POST['subject'], "Name: ".$_POST['name']."
+      Email: ".$_POST['email']."
       Message: ".$_POST['message']);
     {
+      $_POST = array();
       $result='<div class="alert alert-success" role="alert">Thank you, we will be in touch shortly</div>';
     }
   }
@@ -46,8 +48,6 @@ if ($_POST['submit']){
 
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.min.css">
-
-
 
     <link rel='stylesheet prefetch' href='http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css'>
 
@@ -154,22 +154,21 @@ if ($_POST['submit']){
         <form method="post" role="form">
       
                   <!-- Sender's Name -->
-          <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters" style="float:left;">
+          <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters" id ="name">
             <label for="name">Name</label>
-            <input class="form-control input-group" name="name" type="text" placeholder="Jerry Hill" id="name" value="<?php echo $_POST['name']; ?>" required>
+            <input class="form-control" name="name" type="text" placeholder="Jerry Hill" id="name" value="<?php echo $_POST['name']; ?>" required>
           </div>
                   <!-- Email address -->
-          <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters has-error" style="float:left;">
+          <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters has-error" id="email">
             <label for="email">Email address</label>
-            <input type="email" class="form-control input-group" name='email' id="email" aria-describedby="emailHelp" placeholder="leo.seltzer@rollerderby.com" value="<?php echo $_POST['email']; ?>" required>
-            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input type="email" class="form-control input-group" name='email' id="email" placeholder="leo.seltzer@rollerderby.com" value="<?php echo $_POST['email']; ?>" required>
           </div>
 
           <div class="newLine"></div>
                   <!-- Subject -->
           <div class="form-group row col col-5 col-sm-4 col-md-3 col-lg-4 no-gutters">
             <label for="subject">Subject</label>
-            <select class="form-control input-group row" name="subject" id="subject">
+            <select class="form-control row" name="subject" id="subject">
               <option selected>Choose...</option>
               <option value="1">General</option>
               <option value="2">New Skater</option>
@@ -177,9 +176,9 @@ if ($_POST['submit']){
             </select>
           </div>
                   <!-- Message -->
-          <div class="form-group row col col-12 col-sm-12 col-md-12 col-lg-12 no-gutters" style="float:left; width:100%;">
-            <label for="content">Your Message</label>
-            <textarea class="form-control input-group" name="message" id="content" rows="12" placeholder="Inquiry?" required><?php echo $_POST['message']; ?></textarea>
+          <div class="form-group row col col-12 col-sm-12 col-md-12 col-lg-12 no-gutters" id="message">
+            <label for="message">Your Message</label>
+            <textarea class="form-control" name="message" id="message" rows="12" placeholder="Inquiry?" required><?php echo $_POST['message']; ?></textarea>
           </div>
 
           <div class="checkbox">

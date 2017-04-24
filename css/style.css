@@ -2,7 +2,6 @@
 #9370DB purple
 #228B22 forest green
 */
-#success_message{ display: none;}
 
 
 
@@ -179,8 +178,21 @@ fieldset{
   background-color: #DCDCDC !important; 
   color: #9370DB !important;
 }
+#name{
+  float: left;
+}
+#email{
+  float:right;
+}
 #subject{
   margin-left: 2px;
+}
+#content{
+  float:left; 
+  width:100%;
+}
+.checkbox{
+  margin-left: 15px;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #9370DB !important;
