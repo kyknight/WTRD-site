@@ -1,34 +1,37 @@
 <!-- contact form php -->
 <?php
-if ($_POST['submit']){
-  //input there?
-  if(!$_POST['name']){
-    $error = '<br/>-Please enter your name.';
-  }
-  if(!$_POST['email']){
-    $error .= '<br/>-Please enter your email.';
-  }
-  if(!$_POST['subject']){
-    $error .= '<br/>-Please select the subject of your message.';
-  }
-  if(!$_POST['message']){
-    $error .= '<br/>-Please enter your message.';
-  }
-  if(!$_POST['check']){
-    $error .= '<br/>-Please confirm you are human.';
-  }
 
-  if ($error){
-    $result='<div class="alert alert-danger" role="alert"><strong>Whoops, there is an error</strong>. Please correct the following: '.$error.'</div>';
-  }else{
-    mail('kyleigh.knight@hotmail.com', $_POST['subject'], "Name: ".$_POST['name']."
-      Email: ".$_POST['email']."
-      Message: ".$_POST['message']);
+if ($_POST['submit']) {
+
+  if (!$_POST['name']) {
+    $error="<br/>- Please enter your name";
+  }
+  if (!$_POST['email']) {
+    $error.="<br/>- Please enter your email";
+  }
+    if (!$_POST['subject']){
+        $error.="<br/>- Please select a subject";
+    }
+  if (!$_POST['message']) {
+    $error.="<br/>- Please enter a message";
+  }
+  if (!$_POST['check']) {
+    $error.="<br/>- Please confirm you are human";
+  }
+  
+  if ($error) {
+    $result='<div class="alert alert-danger" role="alert"><i class="fa fa-times" aria-hidden="true"></i><strong>Whoops, there is an error</strong>. Please correct the following: '.$error.'</div>';
+  } else {
+    mail("kyleigh.knight@hotmail.com", "Contact message", "Name: ".$_POST['name']."
+    Email: ".$_POST['name']."
+    Message: ".$_POST['message']);
+    
     {
-      $_POST = array();
-      $result='<div class="alert alert-success" role="alert">Thank you, we will be in touch shortly</div>';
+    $result='<div class="alert alert-success" role="alert"><i class="fa fa-check" aria-hidden="true"></i>Thank you, We\'ll be in touch shortly</div>';
     }
   }
+
+
 }
 
 ?>
@@ -143,58 +146,59 @@ if ($_POST['submit']){
     </div>
     <div class="newLine"></div>
     
+              <!-- CONTACT FORM -->
+    <section id="contact">
+      <div class="container row col col-lg-8 col-md-10">
+        
+          <h1>Contact Us Today!</h1>
+          <?php echo $result;?>
+          <!--<p>Send a messge via the form below.</p>-->
 
-    <!-- CONTACT FORM -->
-    <fieldset class='container col col-lg-8 col-md-10' id='emailForm'>
-              <!-- Form Name -->
-      <h1>Contact Us Today!</h1>
+          <form method="post" role="form">
+                              <!-- Sender's Name -->
+                <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters" id ="name">
+                  <label for="name">Name</label>
+                  <input class="form-control" name="name" type="text" placeholder="Jerry Hill" id="name" value="<?php echo $_POST['name']; ?>" required>
+                </div>
+                        <!-- Email address -->
+                <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters has-error" id="email">
+                  <label for="email">Email address</label>
+                  <input type="email" class="form-control input-group" name='email' id="email" placeholder="leo.seltzer@rollerderby.com" value="<?php echo $_POST['email']; ?>" required>
+                </div>
 
-        <?php echo $result; ?>
+                <div class="newLine"></div>
+                        <!-- Subject -->
+                <div class="form-group row col col-5 col-sm-4 col-md-3 col-lg-4 no-gutters">
+                  <label for="subject">Subject</label>
+                  <select class="form-control row" name="subject" id="subject">
+                    <option selected>Choose...</option>
+                    <option value="1">General</option>
+                    <option value="2">New Skater</option>
+                    <option value="3">Sponsorship</option>
+                  </select>
+                </div>
+                        <!-- Message -->
+                <div class="form-group row col col-12 col-sm-12 col-md-12 col-lg-12 no-gutters" id="message">
+                  <label for="message">Your Message</label>
+                  <textarea class="form-control" name="message" id="message" rows="12" placeholder="Inquiry?" required><?php echo $_POST['message']; ?></textarea>
+                </div>
 
-        <form method="post" role="form">
-      
-                  <!-- Sender's Name -->
-          <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters" id ="name">
-            <label for="name">Name</label>
-            <input class="form-control" name="name" type="text" placeholder="Jerry Hill" id="name" value="<?php echo $_POST['name']; ?>" required>
-          </div>
-                  <!-- Email address -->
-          <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters has-error" id="email">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control input-group" name='email' id="email" placeholder="leo.seltzer@rollerderby.com" value="<?php echo $_POST['email']; ?>" required>
-          </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="check"> I am Human.
+                  </label>
+                </div>
 
-          <div class="newLine"></div>
-                  <!-- Subject -->
-          <div class="form-group row col col-5 col-sm-4 col-md-3 col-lg-4 no-gutters">
-            <label for="subject">Subject</label>
-            <select class="form-control row" name="subject" id="subject">
-              <option selected>Choose...</option>
-              <option value="1">General</option>
-              <option value="2">New Skater</option>
-              <option value="3">Sponsorship</option>
-            </select>
-          </div>
-                  <!-- Message -->
-          <div class="form-group row col col-12 col-sm-12 col-md-12 col-lg-12 no-gutters" id="message">
-            <label for="message">Your Message</label>
-            <textarea class="form-control" name="message" id="message" rows="12" placeholder="Inquiry?" required><?php echo $_POST['message']; ?></textarea>
-          </div>
-
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="check"> I am Human.
-            </label>
-          </div>
-
-          <div class="form-group">
-            <label class="col-md-4 control-label"></label>
-            <div class="col-md-4 no-gutters" style="float:left;">
-              <button type="submit" name="submit" class="btn btn-warning"><i class="fa fa-paper-plane-o" aria-hidden="true"></i> Send</button>
-            </div>
-          </div>
-        </form>
-      </fieldset>
+                <div class="form-group">
+                  <label class="col-md-4 control-label"></label>
+                  <div class="col-md-4 no-gutters" style="float:left;">
+                    <input type="submit" name="submit" class="btn btn-warning" value="Send">
+                  </div>
+                </div>
+          </form>
+        
+      </div>
+    </section>
 
       
 </body>
