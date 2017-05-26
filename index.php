@@ -15,14 +15,11 @@ if ($_POST['submit']) {
   if (!$_POST['message']) {
     $error.="<br/>- Please enter a message";
   }
-  if (!$_POST['check']) {
-    $error.="<br/>- Please confirm you are human";
-  }
   
   if ($error) {
     $result='<div class="alert alert-danger" role="alert"><i class="fa fa-times" aria-hidden="true"></i><strong>Whoops, there is an error</strong>. Please correct the following: '.$error.'</div>';
   } else {
-    mail("kyleigh.knight@hotmail.com", "Contact message", "Name: ".$_POST['name']."
+    mail("westtxrollerderby@gmail.com", "Contact message", "Name: ".$_POST['name']."
     Email: ".$_POST['name']."
     Message: ".$_POST['message']);
     
@@ -72,8 +69,9 @@ if ($_POST['submit']) {
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-item nav-link" href="#top">About</a>
-        <a class="nav-item nav-link" href="#practice">Practices</a>
         <a class="nav-item nav-link" href="#schedule">Schedule</a>
+        <a class="nav-item nav-link" href="#practice">Practices</a>
+        <a class="nav-item nav-link" href="#ticket">Tickets</a>
         <a class="nav-item nav-link" href="#contact">Contact</a>
       </div>
     </div>
@@ -81,10 +79,10 @@ if ($_POST['submit']) {
 
 <!-- slideshow of action shots? -->
       <ul class="slideshow" id="wayUp">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
+          <li></li><!-- Brady -->
+          <li></li><!-- Ally -->
+          <li></li><!-- Real deal photography-->
+          <li></li><!-- Real deal photography-->
           <li></li>
         </ul>
 
@@ -114,9 +112,19 @@ if ($_POST['submit']) {
       </div>
 
       <!-- Sidebar -->
-      <div id="practice" class="row col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 no-gutters">
+      <div id="sidebar" class="row col col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 no-gutters">
+        
+                      		<!-- Ticket widget.... say that ten times fast -->
+        <h4 id="ticket" class="col-sm-12">Tickets</h4>
+            <div style="font-family:Helvetica, arial; display: inline-block; text-align: center;">
+              	<a href="https://westtexasrollerderby.ticketleap.com/" style="background-color:#5f049f;font-size:15px;border-radius: 3px;-moz-border-radius:3px;-webkit-border-radius:3px;box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.15);display: inline-block;margin:0;text-align:center;text-decoration:none;font-weight:bold;color:#ffffff!important;letter-spacing: .07em;padding:18px 27px;font-family: arial,sans-serif !important;" target="_top">BUY TICKETS NOW</a><br/>
+             	<div style="font-family:Helvetica, arial;font-style:italic;letter-spacing: 0.05em;font-size: 12px;margin-top:12px;color:rgba(0, 0, 0, 0.5);">
+              		<a href="https://www.ticketleap.com/info/sell-tickets-online?rc=rad2o39" style="color:rgba(0,0,0,0.5);font-style:italic;">Sell tickets online</a> with Ticketleap
+              	</div>
+            </div>
+
         <!-- Practice location and times. Should also be on the calendar. -->
-            <h4 class="col-sm-12">Practices</h4>
+            <h4 id="practice" class="col-sm-12">Practices</h4>
                   <p>WTRD practices are held at <a href="https://goo.gl/maps/4uStVHJiJtz" target="_blank" title="Fiesta!">The Fiesta Event Center</a> at 1902 E 4th St, Lubbock, TX 79403.</p>
                   <p>Practices are every Thursday from 6:30pm till 9:00pm.</p>
                   <p>New skater (freshmeat) practices are Thursdays from 6:30pm till 7:00pm.</p>
@@ -139,7 +147,7 @@ if ($_POST['submit']) {
 
                     <h5>Do you want to sponsor WTRD and get your company's (or your name) out there? Follow these steps:</h5>
                   <ul>
-                        <li>Download the <a href="./2017_Sponsor Packet.pdf" target="_blank" title="Be awesome!">sponsorship form</a> and fill it out.</li>
+                        <li>Download the <a href="./Wtrd2017Spons.pdf" target="_blank" title="Be awesome!">sponsorship form</a> and fill it out.</li>
                         <li>Contact WTRD with the form below.</li>
                   </ul>
       </div>
@@ -154,7 +162,7 @@ if ($_POST['submit']) {
           <?php echo $result;?>
           <!--<p>Send a messge via the form below.</p>-->
 
-          <form method="post" role="form">
+          <form action="?" method="post" role="form">
                               <!-- Sender's Name -->
                 <div class="form-group row col col-12 col-sm-6 col-md-6 col-lg-6 no-gutters" id ="name">
                   <label for="name">Name</label>
@@ -183,10 +191,7 @@ if ($_POST['submit']) {
                   <textarea class="form-control" name="message" id="message" rows="12" placeholder="Inquiry?" required><?php echo $_POST['message']; ?></textarea>
                 </div>
 
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="check"> I am Human.
-                  </label>
+                <div class="g-recaptcha" data-sitekey="6Lf93CIUAAAAAMPgvPgq3Mb4QfE9UD4ZZQahYdGU">	
                 </div>
 
                 <div class="form-group">
@@ -234,6 +239,9 @@ if ($_POST['submit']) {
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  <!-- script for reCAPTCHA -->
+  	<script src='https://www.google.com/recaptcha/api.js?hs=en'></script>
 
 
 </html>

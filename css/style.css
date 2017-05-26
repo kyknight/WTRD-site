@@ -138,17 +138,21 @@ iframe {
   margin-bottom: 5%;
 }
 
-#practice{
+.article{
+  font-size: .5em !important;
+}
+
+#sidebar{
   float: right;
   margin-top: 3%;
   line-height: 160%;
 }
-#practice h4{
+#sidebar h4{
   color: #9370DB;
   text-decoration: underline;
   padding-bottom: 5%;
 }
-#practice h5{
+#sidebar h5{
   font-weight: 500px;
 }
 
@@ -198,8 +202,9 @@ form{
 #content{
   width:100%;
 }
-.checkbox{
+.g-recaptcha{
   margin-left: 15px;
+  margin-bottom: 10px;
 }
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: #9370DB !important;
@@ -212,6 +217,9 @@ form{
 }
 :-moz-placeholder { /* Firefox 18- */
   color: #9370DB !important;
+}
+.btn-warning{
+  margin-bottom: 5px;
 }
 
 #contact a{
