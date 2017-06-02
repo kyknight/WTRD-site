@@ -20,7 +20,7 @@ if ($_POST['submit']) {
     $result='<div class="alert alert-danger" role="alert"><i class="fa fa-times" aria-hidden="true"></i><strong>Whoops, there is an error</strong>. Please correct the following: '.$error.'</div>';
   } else {
     mail("westtxrollerderby@gmail.com", "Contact message", "Name: ".$_POST['name']."
-    Email: ".$_POST['name']."
+    Email: ".$_POST['email']."
     Message: ".$_POST['message']);
     
     {
